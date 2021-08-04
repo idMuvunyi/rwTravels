@@ -48,12 +48,12 @@ const StoriesList = () => {
         <Icon name="API" color={COLORS.secondary} size={42} />
         <Text style={styles.title}>RwTravels</Text>
        </View>
-        <Text style={{marginTop:5, fontSize:17, color:COLORS.grey}}>All about travel destinations in Rwanda!</Text>
+        <Text style={{marginTop:5, fontSize:15, color:COLORS.grey, textAlign:'justify', marginHorizontal:10}}>Rwanda is a beautiful mountainous country in east Africa. We help you find travel destinations!</Text>
      </View>
      </View>
 
      <View style={styles.subHeader}>
-       <Text style={{ color:COLORS.primary ,fontSize:20}}>Featured Destinations</Text>
+       <Text style={{ color:COLORS.primary, fontWeight:'normal', fontSize:20}}>Featured Destinations</Text>
      </View>
      
        <StoriesList />
@@ -71,14 +71,18 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize:25,
-    color:COLORS.grey,
-    marginLeft:10
+    color:'#333',
+    fontWeight:'bold',
+    marginLeft:10,
+    
   },
   subHeader:{
     margin:40,
-    borderTopWidth:1,
-    borderRightWidth:1,
-    borderColor:COLORS.secondary
+    borderTopWidth:0.5,
+    borderRightWidth:0.5,
+    borderLeftWidth:0.5,
+    borderColor:COLORS.grey,
+    fontSize:15
   },
 
   card:{

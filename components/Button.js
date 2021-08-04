@@ -14,6 +14,28 @@ const PrimaryButton = ({ title, onPress = () => {}}) => {
     )
 }
 
+const SecondaryButton = ({ title, onPress = () => {}}) => {
+    return (
+        <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+            <View style={{...styles.btnPrimary, backgroundColor:COLORS.primary, height:50, marginHorizontal:5,}}>
+                <Icon name="chevrons-right" color={COLORS.white} size={25}/>
+               <Text style={styles.text}>{title}</Text>
+            </View>
+        </TouchableOpacity>
+    )
+}
+
+const SuccessButton = ({ title, onPress = () => {}}) => {
+    return (
+        <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+            <View style={{...styles.btnPrimary, backgroundColor:COLORS.success, height:50, marginHorizontal:5,}}>
+                <Icon name="chevrons-right" color={COLORS.white} size={25}/>
+               <Text style={styles.text}>{title}</Text>
+            </View>
+        </TouchableOpacity>
+    )
+}
+
 const styles = StyleSheet.create({
     btnPrimary:{
         height:60,
@@ -33,4 +55,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export {PrimaryButton}
+export {PrimaryButton, SecondaryButton, SuccessButton }

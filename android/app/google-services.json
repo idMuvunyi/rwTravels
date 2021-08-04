@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1081568413065",
+    "project_id": "rwtravels-f07d0",
+    "storage_bucket": "rwtravels-f07d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081568413065:android:add0c409bce5df63430d58",
+        "android_client_info": {
+          "package_name": "com.rwtravels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1081568413065-0l1o4miugsrgb7ggnfiol88odfnh27p9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA29J7dZMZpal752AtXRVgN287QsNK8fAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081568413065-0l1o4miugsrgb7ggnfiol88odfnh27p9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
