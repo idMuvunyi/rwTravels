@@ -25,7 +25,7 @@ export default function Destinations({navigation}) {
         <SafeAreaView style={{flex:1, backgroundColor:COLORS.white}}>
           <View style={{marginTop:35, marginHorizontal:30,}}>
             <View style={{flexDirection:'row', alignItems:'center'}}>
-              <Icon name="API" color={COLORS.secondary} size={42} />
+              <Icon name="dingding" color={COLORS.secondary} size={42} />
             <Text style={styles.destHeader}>Browse Destinations</Text>
             </View>
             <Text style={styles.destSubHeader}>Rwanda has four provinces and Kigali as the capital city, choose where your interest lies accordingly.</Text>

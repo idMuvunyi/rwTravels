@@ -5,14 +5,15 @@ import {createStackNavigator} from '@react-navigation/stack'
 import BottomNavigator from './components/BottomNavigator'
 import HomeDetails from './components/HomeDetails'
 import StoryHome from './components/StoryHome'
-import { AuthProvider } from './auth/authProvider'
+import {Provider} from 'react-redux'
+import { store } from './store/store'
 
 
 const Stack = createStackNavigator()
 
 export default function App() {
   return (
-    <AuthProvider>
+   <Provider store={store}>
    <NavigationContainer>
    <Stack.Navigator screenOptions={{headerShown:false}}>
      <Stack.Screen name="Home" component={BottomNavigator} />
@@ -20,6 +21,7 @@ export default function App() {
      <Stack.Screen name='StoryHome' component={StoryHome} />
    </Stack.Navigator>
    </NavigationContainer>
-   </AuthProvider>
+   </Provider>
+  
   )
 }

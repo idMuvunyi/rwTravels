@@ -26,7 +26,7 @@ export default function HomeDetails({navigation, route}) {
            
             <View style={styles.desc}>
                 <View>
-                <Text style={{fontSize:25, fontWeight:'bold', color:COLORS.grey}}>{details.name}</Text>
+                <Text style={{fontSize:25, fontWeight:'bold', color:"#333"}}>{details.name}</Text>
                 <Text style={{fontSize:15, color:COLORS.primary}}>Location : {details.dest}</Text>
                 </View>
                 <Text style={styles.descFullText}>{details.desc}</Text>
