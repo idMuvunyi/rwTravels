@@ -12,8 +12,7 @@ import { connect } from 'react-redux'
 import * as types from '../store/types'
 import { register, login } from '../auth/authProvider'
 import firestore from '@react-native-firebase/firestore'
-import { get } from 'lodash'
-import { FlatList } from 'react-native-gesture-handler'
+
 
 
 

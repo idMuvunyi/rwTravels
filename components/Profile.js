@@ -7,11 +7,34 @@ import COLORS from '../assets/colors'
 const Profile = ({ navigation, story, users }) => {
 
     const [myStory, setMyStory] = useState([])
+    const [myProfile, setMyProfile] = useState({})
 
     useEffect(() => {
         fetchMyStory()
     }, [story])
 
+    useEffect(() => {
+        fetchUserDetails()
+    }, [users])
+
+
+
+    const fetchUserDetails = async () => {
+        try {
+            let myProfileList = {}
+            const data = await firestore()
+                .collection('Travelers')
+                .where('id', '==', users.uid)
+                .get()
+
+            myProfileList.name = data.docs[0]._data.Names;
+            myProfileList.email = users.email
+            setMyProfile(myProfileList)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 
     const fetchMyStory = async () => {
@@ -33,10 +56,10 @@ const Profile = ({ navigation, story, users }) => {
                             dest,
                             id,
                             imageUrl,
+
                         })
                     })
                 })
-
             setMyStory([...myList])
 
         } catch (error) {
@@ -79,15 +102,15 @@ const Profile = ({ navigation, story, users }) => {
                 showsVerticalScrollIndicator={false}
             >
                 <Image source={require('../assets/images/user.jpg')} style={styles.imgUser} />
-                <Text style={styles.userNam}>Muvunyi Andre</Text>
-                <Text style={{ fontSize: 15 }}>muvunyiiddy@gmail.com</Text>
+                <Text style={styles.userNam}>{myProfile.name}</Text>
+                <Text style={{ fontSize: 15 }}>{myProfile.email}</Text>
                 <View style={styles.btnWrapper}>
                     <TouchableOpacity style={styles.btn}>
                         <Text style={styles.txt}>Edit Profile</Text>
                     </TouchableOpacity>
 
                     <View style={styles.postInfo}>
-                        <Text style={{ fontSize: 18, color: COLORS.primary, fontWeight: 'bold' }}>12</Text>
+                        <Text style={{ fontSize: 18, color: COLORS.primary, fontWeight: 'bold', textAlign: 'center' }}>{myStory.length}</Text>
                         <Text style={{ fontSize: 18, color: COLORS.grey, }}>Stories</Text>
                     </View>
                 </View>

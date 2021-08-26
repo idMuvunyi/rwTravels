@@ -3,7 +3,7 @@ import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, Ima
 import COLORS from '../assets/colors'
 import Icon from 'react-native-vector-icons/AntDesign'
 import infos from '../assets/mock'
-import userImage from '../assets/images/avatar.png'
+import userImage from '../assets/images/user.jpg'
 import { logout } from '../auth/authProvider'
 import { connect } from 'react-redux'
 
@@ -17,8 +17,8 @@ const Home = ({ navigation, users }) => {
     return (
       <ScrollView
         horizontal
-        /* showsHorizontalScrollIndicator={false} */
-        contentContainerStyle={{ flexGrow: 1 }}
+        contentContainerStyle={{ alignItems: 'center' }}
+        showsHorizontalScrollIndicator={false}
       >
         {infos.map((stories, index) => (
           <TouchableOpacity
@@ -54,13 +54,13 @@ const Home = ({ navigation, users }) => {
             <TouchableOpacity activeOpacity={0.8} onPress={() => logout()}>
               <View style={styles.userImg}>
                 {users ?
-                  <Image source={userImage} style={{ height: 40, width: 40 }} />
+                  <Image source={userImage} style={{ height: 40, width: 40, borderRadius: 20 }} />
                   : null
                 }
               </View>
             </TouchableOpacity>
           </View>
-          <Text style={{ marginTop: 5, fontSize: 15, color: COLORS.grey, textAlign: 'justify', marginHorizontal: 10 }}>Rwanda is a beautiful mountainous country in east Africa. We help you find travel destinations!</Text>
+          <Text style={{ marginTop: 10, fontSize: 15, color: COLORS.grey, textAlign: 'justify', marginHorizontal: 10 }}>Rwanda is a beautiful mountainous country in east Africa. We help you find travel destinations!</Text>
         </View>
       </View>
 
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
 
   },
   subHeader: {
-    margin: 40,
+    marginHorizontal: 40,
+    marginTop: 40,
     borderTopWidth: 0.5,
     borderRightWidth: 0.5,
     borderLeftWidth: 0.5,
@@ -111,9 +112,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     borderRadius: 20,
     width: widthCard,
-    marginTop: 20,
+    marginTop: 10,
     elevation: 10,
-    backgroundColor: COLORS.white
+    backgroundColor: COLORS.white,
   },
   textCard: {
     fontSize: 18,

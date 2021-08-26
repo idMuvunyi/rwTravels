@@ -24,19 +24,19 @@ export default function Destinations({ navigation }) {
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
-      <View style={{ marginTop: 35, marginHorizontal: 30, }}>
+      <View style={{ marginVertical: 35, marginHorizontal: 30, }}>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Icon name="dingding" color={COLORS.secondary} size={42} />
           <Text style={styles.destHeader}>Browse Destinations</Text>
         </View>
         <Text style={styles.destSubHeader}>Rwanda has four provinces and Kigali as the capital city, choose where your interest lies accordingly.</Text>
       </View>
-      <View style={{ marginTop: 40 }}>
-        <FlatList
-          data={destination}
-          renderItem={({ item }) => <ListItems dest={item} />}
-        />
-      </View>
+
+      <FlatList
+        data={destination}
+        renderItem={({ item }) => <ListItems dest={item} />}
+      />
+
     </SafeAreaView>
   )
 }

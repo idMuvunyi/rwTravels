@@ -18,11 +18,12 @@ export default function BottomNavigator() {
                 style: {
                     height: 60,
                     paddingBottom: 10,
-                    position: 'absolute',
-                    bottom: 10,
-                    left: 10,
-                    right: 10,
+                    marginVertical: 15,
+                    marginHorizontal: 10,
+                    elevation: 5,
                     borderRadius: 10,
+                    borderColor: COLORS.secondary,
+                    borderWidth: 0.5,
                     backgroundColor: COLORS.white
                 },
 
