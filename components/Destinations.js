@@ -1,8 +1,9 @@
 import React from 'react'
-import { View, Text, SafeAreaView, StyleSheet, FlatList, TouchableHighlight, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, StyleSheet, FlatList, TouchableHighlight, TouchableOpacity, Button } from 'react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import COLORS from '../assets/colors'
 import destination from '../assets/dest'
+import { StoryButton, MapButton } from './Button'
 
 
 export default function Destinations({ navigation }) {
@@ -10,15 +11,19 @@ export default function Destinations({ navigation }) {
   const ListItems = ({ dest }) => {
 
     return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => navigation.navigate('StoryHome', dest)}
-      >
+      <>
         <View style={styles.container}>
           <Text style={{ fontSize: 15, color: COLORS.primary }}>{dest.name}</Text>
           <Text style={{ fontSize: 14, color: COLORS.grey, textAlign: 'justify' }}>{dest.detail}</Text>
+          <View style={styles.buttons}>
+            <StoryButton title='stories' onPress={() => navigation.navigate('StoryHome', dest)} />
+            <View style={{ marginLeft: 5 }}>
+              <MapButton title='map' onPress={() => navigation.navigate('Maps', dest)} />
+            </View>
+          </View>
+
         </View>
-      </TouchableOpacity>
+      </>
     )
   }
 
@@ -63,5 +68,10 @@ const styles = StyleSheet.create({
     borderLeftWidth: 4,
     borderLeftColor: COLORS.secondary,
     borderTopLeftRadius: 15
+  },
+  buttons: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    margin: 10
   }
 })

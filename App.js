@@ -7,6 +7,7 @@ import HomeDetails from './components/HomeDetails'
 import StoryHome from './components/StoryHome'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
+import Maps from './components/Maps'
 
 
 const Stack = createStackNavigator()
@@ -20,6 +21,7 @@ export default function App() {
           <Stack.Screen name="Home" component={BottomNavigator} />
           <Stack.Screen name='HomeDetails' component={HomeDetails} />
           <Stack.Screen name='StoryHome' component={StoryHome} />
+          <Stack.Screen name='Maps' component={Maps} />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

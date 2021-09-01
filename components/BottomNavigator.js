@@ -36,7 +36,7 @@ export default function BottomNavigator() {
                 }}
             />
 
-            <Tab.Screen name="Profile" component={Profile}
+            <Tab.Screen name="Profile" children={() => <Profile active={true} />}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.userBtn}>

@@ -6,6 +6,7 @@ import infos from '../assets/mock'
 import userImage from '../assets/images/user.jpg'
 import { logout } from '../auth/authProvider'
 import { connect } from 'react-redux'
+import OptionsMenu from 'react-native-option-menu'
 
 const { width } = Dimensions.get('window')
 const widthCard = width * (80 / 100)
@@ -51,12 +52,20 @@ const Home = ({ navigation, users }) => {
           <View style={{ flexDirection: 'row' }}>
             <Icon name="dingding" color={COLORS.secondary} size={42} />
             <Text style={styles.title}>RwTravels</Text>
-            <TouchableOpacity activeOpacity={0.8} onPress={() => logout()}>
+            <TouchableOpacity activeOpacity={0.8}>
               <View style={styles.userImg}>
+
                 {users ?
-                  <Image source={userImage} style={{ height: 40, width: 40, borderRadius: 20 }} />
+                  <OptionsMenu
+                    button={userImage}
+                    buttonStyle={{ height: 40, width: 40, borderRadius: 20 }}
+                    destructiveIndex={1}
+                    options={["Sign out", "Stay In"]}
+                    actions={[logout]}
+                  />
                   : null
                 }
+
               </View>
             </TouchableOpacity>
           </View>
