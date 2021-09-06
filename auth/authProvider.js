@@ -16,18 +16,22 @@ const login = async (email, password) => {
 const register = async (email, password, fullName) => {
 
     try {
-        const reg = await auth().createUserWithEmailAndPassword(email, password)
-        const uid = reg.user.uid
+        let uid;
+        await auth().createUserWithEmailAndPassword(email, password)
+            .then(userCredential => {
+                if (userCredential.user) {
+                    userCredential.user.updateProfile({
+                        displayName: fullName
+                    })
+                        .catch(err => {
+                            console.log(err)
+                        })
 
-        // Not created yet, have to wait
-        reg.user.updateProfile({
-            displayName: fullName
-        })
+                    uid = userCredential.user.uid
+                }
+            })
 
-        console.log(reg)
-
-        //await auth().currentUser.updateProfile({displayName:fullName})
-        if (reg) {
+        if (uid) {
             firestore()
                 .collection('Travelers')
                 .doc(uid)

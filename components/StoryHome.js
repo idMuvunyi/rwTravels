@@ -37,7 +37,7 @@ const StoryHome = ({ navigation, route, updateUser, users, travelStory, storyLis
             travelStory()
             setLoading()
         }
-    }, [storyList, liked])
+    }, [storyList, liked, listing])
 
 
     /* useEffect(() => {

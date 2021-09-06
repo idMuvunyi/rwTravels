@@ -9,6 +9,7 @@ import COLORS from '../assets/colors';
 import Profile from './Profile';
 
 
+
 const Tab = createBottomTabNavigator();
 
 export default function BottomNavigator() {
@@ -28,6 +29,7 @@ export default function BottomNavigator() {
                 },
 
             }}>
+
             <Tab.Screen name='Home' component={Home}
                 options={{
                     tabBarIcon: ({ color }) => (
